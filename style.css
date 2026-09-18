@@ -4,7 +4,9 @@ body {
     background-attachment: fixed;
     margin: 2px;
 }
+
 h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: azure;
+    text-align: center;
 }
