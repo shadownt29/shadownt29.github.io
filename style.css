@@ -10,3 +10,6 @@ h1 {
     color: azure;
     text-align: center;
 }
+a:link {
+    padding-right: 8px;
+}
