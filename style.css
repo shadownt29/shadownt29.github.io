@@ -12,4 +12,9 @@ h1 {
 }
 a:link {
     padding-right: 8px;
+    color: azure;
+
+    &:hover {
+        color: aqua;
+    }
 }
