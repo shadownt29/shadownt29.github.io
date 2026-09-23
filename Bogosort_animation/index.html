@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BogoSort Team</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>BOGOSORT</h1>
+    <div style="font-size:0.75rem;color:var(--dg);margin-top:2px">Team Height Sorter</div>
+  </div>
+  <span class="red-tag">O(n x n!)</span>
+</header>
+
+<div class="stats">
+  <div class="stat-box red">
+    <div class="stat-val" id="s-attempts">0</div>
+    <div class="stat-label">Attempts</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-val" id="s-comparisons">0</div>
+    <div class="stat-label">Comparisons</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-val" id="s-swaps">0</div>
+    <div class="stat-label">Swaps</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-val" id="s-time">0ms</div>
+    <div class="stat-label">Runtime</div>
+  </div>
+</div>
+
+<div class="status-bar">
+  <span id="status-text">Press START to begin BogoSort</span>
+  <span id="status-phase" style="color:#E63329;font-weight:bold"></span>
+</div>
+
+<div class="stage" id="stage">
+  <div class="floor"></div>
+  <div class="sorted-banner" id="sorted-banner">SORTED</div>
+</div>
+
+<div class="controls">
+  <button class="btn-start" id="btn-start">START</button>
+  <button class="btn-pause" id="btn-pause" disabled>PAUSE</button>
+  <button class="btn-reset" id="btn-reset">RESET</button>
+  <button class="btn-speed" id="btn-speed">SPEED: <span id="speed-label">NORMAL</span></button>
+</div>
+
+<div class="log" id="log">
+  <div>// BogoSort Team Animation</div>
+  <div>// Press START to watch chaos unfold...</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
