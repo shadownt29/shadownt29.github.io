@@ -1,11 +1,11 @@
 // === PUT YOUR PICTURE FILENAMES HERE ===
 // Make sure the images are in the exact same folder as index.html
 const TEAM = [
-  { id: 'p1', name: 'Sophia', height: 162, color: '#E63329', img: 'sophia.jpg' },
-  { id: 'p2', name: 'Sin', height: 173, color: '#555', img: 'sin.jpg' },
-  { id: 'p3', name: 'Sak', height: 175, color: '#1A1A1A', img: 'sak.jpg' },
-  { id: 'p4', name: 'Pikun', height: 175, color: '#1A1A1A', img: 'pikun.jpg' },
-  { id: 'p5', name: 'Rozanel', height: 200, color: '#555', img: 'rozanel.jpg' }
+  { id: 'p1', name: 'Sophia', height: 162, color: '#E63329', img: 'sophia.png' },
+  { id: 'p2', name: 'Sin', height: 173, color: '#555', img: 'sin.png' },
+  { id: 'p3', name: 'Sak', height: 175, color: '#1A1A1A', img: 'sak.png' },
+  { id: 'p4', name: 'Pikun', height: 175, color: '#1A1A1A', img: 'pikun.png' },
+  { id: 'p5', name: 'Rozanel', height: 200, color: '#555', img: 'rozanel.png' }
 ];
 // ========================================
 
