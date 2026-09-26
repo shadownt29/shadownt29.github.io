@@ -3,6 +3,7 @@ body {
     background-size: cover;
     background-attachment: fixed;
     margin: 2px;
+    display: block;
 }
 /* Head */
 .head {
@@ -21,6 +22,18 @@ body {
     clear: both;
     padding: 1.8em 1.5em;
     font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+}
+.head_menu ul {
+    margin: 0;
+    padding: 0;
+    clear: both;
+    list-style-type: none;
+}
+
+.head_menu-item {
+    display: block;
+    list-style-type: none;
+    white-space: nowrap;
 }
 /* nav */
 .greedy-nav {
@@ -85,23 +98,122 @@ nav ul {
 nav li {
     list-style: none;
 }
-.head_menu ul {
-    margin: 0;
-    padding: 0;
-    clear: both;
-    list-style-type: none;
-}
 
-.head_menu-item {
-    display: block;
-    list-style-type: none;
-    white-space: nowrap;
-}
 li {
     display: list-item;
     unicode-bidi: isolate;
 }
 div {
-    display: block;
+    /* display: block; */
     unicode-bidi: isolate;
+}
+
+/* Layout - Sidebar*/
+.sidebar {
+    width: 220px;
+    min-width: 220px;
+    padding: 2em 1.5em;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.sidebar__avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 1em;
+    border: 2px solid #ededed;
+}
+
+.sidebar__name {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #fff;
+    margin: 0 0 0.3em;
+}
+
+.sidebar__bio {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #aaa;
+    margin-bottom: 1.2em;
+    line-height: 1.6;
+}
+
+.sidebar__links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar__links li {
+    display: block;
+    padding: 0.3em 0;
+    font-size: 0.85rem;
+    color: #ccc;
+}
+
+.sidebar__links a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.sidebar__links a:hover {
+    color: #fff;
+}
+
+main {
+    flex: 1;
+    padding: 2em;
+    color: #fff;
+}
+/* Add flex to your page wrapper */
+#main {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+/* ABOUT ME PAGE */
+.about {
+    max-width: 750px;
+    padding: 2em 1.5em;
+    color: #e0e0e0;
+    font-family: -apple-system, "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+}
+
+.about h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0.5em;
+}
+
+.about h2 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 1.5em;
+    margin-bottom: 0.4em;
+}
+
+.about p {
+    margin-bottom: 1.2em;
+    font-size: 0.95rem;
+}
+
+.about a {
+    color: #7eb8c9;
+    text-decoration: underline;
+}
+
+.about a:hover {
+    color: #fff;
+}
+
+.about strong {
+    color: #fff;
 }
