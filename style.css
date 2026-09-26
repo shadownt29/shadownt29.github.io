@@ -90,6 +90,7 @@ body {
     &:hover {
         color: #fff;
         text-decoration: underline 3px;
+        opacity: 40%;
     }
 }
 .hidden {
