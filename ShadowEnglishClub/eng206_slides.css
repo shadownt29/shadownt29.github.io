@@ -53,14 +53,11 @@ body {
 }
 
 .title-slide__main {
-    font-size: 3.8em;
+    font-size: 4.8em;
     font-weight: bold;
     color: #1e3a5f;
     line-height: 1.15;
 }
-
-.accent-green { color: #3ab54a; }
-.accent-blue  { color: #2e5fa3; }
 
 /* Middle logo */
 .title-slide__logo-mid {
@@ -79,7 +76,10 @@ body {
 }
 
 /* ── SLIDE 2+: Content slides ── */
-#slide-2 { justify-content: flex-start; padding-top: 2.5em; }
+#slide-2 { 
+    justify-content: flex-start; 
+    padding-top: 5em; 
+}
 
 .slide__header {
     display: flex;
@@ -101,7 +101,7 @@ body {
 }
 
 .slide__header h2 {
-    font-size: 2.4em;
+    font-size: 3em;
     font-weight: bold;
     color: #1e3a5f;
 }
@@ -115,7 +115,7 @@ body {
 }
 
 .slide__bullets li {
-    font-size: 1.6em;
+    font-size: 2em;
     color: #1e3a5f;
     display: flex;
     align-items: center;
