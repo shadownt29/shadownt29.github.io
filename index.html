@@ -7,9 +7,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ngorn Sihasin</title>
         <link rel="stylesheet" href="/style.css">
+        <!-- Font Awesome for icons (location pin, envelope, github, etc.) -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     </head>
     <body>
+
+        <!-- ===================== HEAD / NAV ===================== -->
+        <!-- Top navigation bar — shared across all pages via style.css -->
         <div class="head">
             <div class="head_inner-wrap">
                 <div class="head_menu">
@@ -18,6 +22,7 @@
                             <div class="favicon"></div>
                         </button>
                         <ul class="visible-links">
+                            <!-- First item: bold + extra padding (see style.css li:first-child) -->
                             <li class="head_menu-item">
                                 <a href="https://shadownt29.github.io/">Home</a>
                             </li>
@@ -33,13 +38,18 @@
                 </div>
             </div>
         </div>
-
+        <!-- ===================== MAIN LAYOUT ==================== -->
+        <!-- Flexbox row: sidebar on left, content on right -->
         <div id="main" role="main">
-            <!-- Sidebar -->
+
+            <!-- --------- SIDEBAR --------- -->
+            <!-- Left column: profile photo, name, bio, links -->
             <aside class="sidebar">
+                <!-- Profile photo — circular, styled in style.css -->
                 <div class="author-avatar">
                     <img src="/img/cat-window.jpeg" alt="Ngorn Sihasin">
                 </div>
+                <!-- Name, bio, and social links -->
                 <div class="author-info">
                     <h3 class="author-name">Ngorn Sihasin</h3>
                     <p class="author-bio">
@@ -47,10 +57,12 @@
                         BS Information & Communications Technology
                     </p>
                     <ul class="author-links">
+                        <!-- Location (not a link, just text with icon) -->
                         <li>
                             <i class="fa-solid fa-location-dot"></i>
                             Phnom Penh, Cambodia
                         </li>
+                        <!-- Email links -->
                         <li>
                             <a href="mailto:2025296ngorn@aupp.edu.kh">
                                 <i class="fa-solid fa-envelope"></i> AUPP Email
@@ -61,6 +73,7 @@
                                 <i class="fa-solid fa-envelope"></i> Personal Email
                             </a>
                         </li>
+                        <!-- GitHub -->
                         <li>
                             <a href="https://github.com/shadownt29" target="_blank">
                                 <i class="fa-brands fa-github"></i> Github
@@ -70,9 +83,45 @@
                 </div>
             </aside>
 
-            <!-- Main content -->
+            <!-- --------- MAIN CONTENT --------- -->
+            <!-- Right column: page article (About me, etc.) -->
             <div class="main-content">
-                <!-- your content here -->
+                <!-- Article wrapper — mirrors the reference site's .page structure -->
+                <article class="page">
+                    <div class="page__inner-wrap">
+                        <!-- Page title -->
+                        <header>
+                            <h1 class="page__title">About me</h1>
+                        </header>
+                        <!-- Body text -->
+                        <section class="page__content">
+                            <p>
+                                I am currently a <strong>Student</strong> at the
+                                <a href="https://aupp.edu.kh" target="_blank">American University of Phnom Penh (AUPP)</a>,
+                                pursuing a BS in Information and Communications Technology (ICT).
+                            </p>
+                            <p>
+                                I am also enrolled at the
+                                <a href="https://uc.edu.kh" target="_blank">University of Cambodia</a>,
+                                taking Research Methods (RES201) and English Literature (ENG232).
+                            </p>
+                            <p>
+                                I enjoy building web projects, working with Java, and exploring tech.
+                                This site is a personal space to share my work and interests.
+                            </p>
+                            <!-- Sub-section -->
+                            <h1 id="interests">Interests</h1>
+                            <ul>
+                                <li>Web development and design</li>
+                                <li>Java programming</li>
+                                <li>Gaming and game modding</li>
+                                <li>Content creation and freelancing</li>
+                            </ul>
+                        </section>
+                        <!-- Footer placeholder — add tags, date, etc. later if needed -->
+                        <footer class="page__meta"></footer>
+                    </div>
+                </article>
             </div>
         </div>
     </body>

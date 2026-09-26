@@ -180,6 +180,8 @@ div {
 
 .author-links a:hover {
     color: #fff;
+    text-decoration: underline;
+    opacity: 50%;
 }
 
 /* Main content area */
@@ -187,4 +189,74 @@ div {
     flex: 1;
     color: #fff;
     font-family: -apple-system, "Roboto", "Segoe UI", Arial, sans-serif;
+}
+/* ===================== PAGE / ARTICLE CONTENT ===================== */
+ 
+/* Wraps the article — same float-right pattern as the reference site */
+.page {
+    flex: 1; /* takes remaining space next to sidebar */
+}
+ 
+.page__inner-wrap {
+    width: 100%;
+}
+ 
+/* "About me" heading at the top of the article */
+.page__title {
+    margin-top: 0;
+    font-size: 1.563em;
+    font-weight: bold;
+    color: #fff;
+    line-height: 1;
+    font-family: -apple-system, "Roboto", "Segoe UI", Arial, sans-serif;
+}
+ 
+/* Body text inside the article */
+.page__content {
+    color: #f0f7f6;
+    font-family: -apple-system, "Roboto", "Segoe UI", Arial, sans-serif;
+    font-size: 1em;
+    line-height: 1.6;
+}
+ 
+/* Paragraphs */
+.page__content p {
+    margin: 0 0 1.3em;
+}
+ 
+/* Section headings (h1 inside content like "Research interests") */
+.page__content h1 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-size: 1.25em;
+    font-weight: bold;
+    color: #fff;
+    border-bottom: 1px solid #2e4a55; /* subtle divider under section titles */
+    padding-bottom: 0.3em;
+}
+ 
+/* Links inside content */
+.page__content a {
+    color: #6cb4d4;
+    text-decoration: underline;
+}
+ 
+.page__content a:hover {
+    color: #aad4e8;
+}
+ 
+/* List items */
+.page__content ul {
+    padding-left: 1.5em;
+    margin-bottom: 1.3em;
+}
+ 
+.page__content li {
+    margin-bottom: 0.4em;
+    color: #d0e8f0;
+}
+ 
+/* Empty footer — no styling needed, just a placeholder */
+.page__meta {
+    margin-top: 1em;
 }
