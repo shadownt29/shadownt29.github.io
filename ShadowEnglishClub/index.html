@@ -140,7 +140,7 @@
             <nav class="club-toc">
                 <p class="club-toc__title">Table of contents</p>
                 <ul>
-                    <li><a href="#introduction" class="club-toc__link active">Introduction</a></li>
+                    <li><a href="#introduction" class="club-toc__link">Introduction</a></li>
                     <li><a href="#about" class="club-toc__link">About the Club</a></li>
                     <li><a href="#activities" class="club-toc__link">Activities</a></li>
                     <li><a href="#resources" class="club-toc__link">Resources</a></li>
@@ -148,6 +148,14 @@
             </nav>
 
         </div>
-
+        
+        <script>
+            document.querySelectorAll('.club-toc__link').forEach(link => {
+                link.addEventListener('click', function() {
+                    document.querySelectorAll('.club-toc__link').forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        </script>
     </body>
 </html>

@@ -40,14 +40,16 @@ body {
 .club-meta {
     background-color: #fff;
     border-bottom: 1px solid #e0e0e0;
+    padding: 0 0 0.5em 0;
 }
 
 .club-meta__inner {
     max-width: 960px;
     margin: 0 auto;
-    padding: 1.5em 2em;
+    padding: 1.5em 2em;     /* keep */
     display: flex;
     gap: 4em;
+    border-top: 1px solid #e0e0e0;  /* add: thin line above */
 }
 
 .club-meta__block {
