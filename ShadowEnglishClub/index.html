@@ -2,11 +2,137 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>ShadowEnglishClass</title>
-        <link rel="stylesheet" href="./style.css">
+        <title>Shadow English Club</title>
+        <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="/ShadowEnglishClub/club.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     </head>
     <body>
-        
+
+        <!-- NAV -->
+        <div class="head">
+            <div class="head_inner-wrap">
+                <div class="head_menu">
+                    <nav id="site-nav" class="greedy-nav">
+                        <button class="hidden" count="0"><div class="favicon"></div></button>
+                        <ul class="visible-links">
+                            <li class="head_menu-item"><a href="https://shadownt29.github.io/">Home</a></li>
+                            <li class="head_menu-item"><a href="https://shadownt29.github.io/ShadowEnglishClub">ShadowEnglishClub</a></li>
+                            <li class="head_menu-item"><a href="/contact.html">Contact</a></li>
+                        </ul>
+                        <ul class="hidden-links hidden"></ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <!-- HERO BANNER -->
+        <div class="club-hero">
+            <img src="/ShadowEnglishClub/img/banner.jpg" alt="Shadow English Club Banner">
+            <div class="club-hero__title">
+                <h1>Shadow English Club</h1>
+            </div>
+        </div>
+
+        <!-- AUTHOR + DATE META ROW -->
+        <div class="club-meta">
+            <div class="club-meta__inner">
+                <div class="club-meta__block">
+                    <span class="club-meta__label">AUTHOR</span>
+                    <a href="https://shadownt29.github.io/" class="club-meta__value">Ngorn Sihasin</a>
+                </div>
+                <div class="club-meta__block">
+                    <span class="club-meta__label">PUBLISHED</span>
+                    <span class="club-meta__value">2025</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- BODY: content + TOC -->
+        <div class="club-body">
+
+            <!-- MAIN CONTENT -->
+            <div class="club-content">
+
+                <h2 id="introduction">Introduction</h2>
+                <p>[ Your introduction goes here. ]</p>
+                <hr>
+
+                <h2 id="about">About the Club</h2>
+                <p>[ About the club goes here. ]</p>
+                <hr>
+
+                <!-- ACTIVITIES SECTION with table -->
+                <h2 id="activities">Activities</h2>
+
+                <p class="note">
+                    <strong>Note</strong>: The following table will be progressively updated
+                    as new activities are added.
+                </p>
+
+                <!-- Activity table — same layout as the reference course progress table -->
+                <table class="activity-table">
+                    <thead>
+                        <tr>
+                            <th>Activity</th>
+                            <th>Materials</th>
+                            <th>Notes</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Row: done -->
+                        <tr>
+                            <td><a href="#">1. [ Activity Name ]</a></td>
+                            <td><a href="#">Materials 1</a></td>
+                            <td>Notes 1</td>
+                            <td><span class="badge badge--done">Completed</span></td>
+                        </tr>
+                        <!-- Row: done -->
+                        <tr>
+                            <td><a href="#">2. [ Activity Name ]</a></td>
+                            <td><a href="#">Materials 2</a></td>
+                            <td>Notes 2</td>
+                            <td><span class="badge badge--done">Completed</span></td>
+                        </tr>
+                        <!-- Row: loading -->
+                        <tr>
+                            <td><a href="#">3. [ Activity Name ]</a></td>
+                            <td><a href="#">Materials 3</a></td>
+                            <td>Notes 3</td>
+                            <td><span class="badge badge--loading">…Loading</span></td>
+                        </tr>
+                        <!-- Row: loading -->
+                        <tr>
+                            <td><a href="#">4. [ Activity Name ]</a></td>
+                            <td><a href="#">Materials 4</a></td>
+                            <td>Notes 4</td>
+                            <td><span class="badge badge--loading">…Loading</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr>
+
+                <h2 id="resources">Resources</h2>
+                <p>[ Resources and links go here. ]</p>
+
+            </div>
+
+            <!-- TABLE OF CONTENTS -->
+            <nav class="club-toc">
+                <p class="club-toc__title">Table of contents</p>
+                <ul>
+                    <li><a href="#introduction" class="club-toc__link active">Introduction</a></li>
+                    <li><a href="#about" class="club-toc__link">About the Club</a></li>
+                    <li><a href="#activities" class="club-toc__link">Activities</a></li>
+                    <li><a href="#resources" class="club-toc__link">Resources</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
     </body>
 </html>
