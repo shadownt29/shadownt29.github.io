@@ -233,3 +233,28 @@ span.club-meta__value { color: #333; }
     text-decoration: none;
     &:hover { text-decoration: underline; }
 }
+
+@media (max-width: 768px) {
+    .club-body {
+        flex-direction: column;
+        padding: 0 1em;
+    }
+    .club-toc {
+        width: 100%;
+        position: static;
+    }
+    .club-meta__inner {
+        gap: 2em;
+        padding: 1em;
+    }
+    .activity-table {
+        font-size: 0.8em;
+    }
+    .activity-table th,
+    .activity-table td {
+        padding: 0.5em 0.4em;
+    }
+    .club-hero__title h1 {
+        font-size: 1.3em;
+    }
+}
