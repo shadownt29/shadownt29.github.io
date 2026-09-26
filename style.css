@@ -86,6 +86,10 @@ body {
     font-weight: normal;
     padding: 0.5rem 0.5rem;
     white-space: nowrap;
+    &:hover {
+        color: #fff;
+        text-decoration: underline;
+    }
 }
 .hidden {
     display: none;
