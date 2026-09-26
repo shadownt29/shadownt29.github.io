@@ -1,83 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENG206 - Shadow English Club</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!-- Slides stylesheet -->
-    <link rel="stylesheet" href="./eng206_slides.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ENG206 - Shadow English Club</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <!-- Slides stylesheet -->
+        <link rel="stylesheet" href="./eng206_slides.css">
+    </head>
+    <body>
 
-<div class="slideshow">
+    <div class="slideshow">
 
-    <!-- ══════════ SLIDE 1: Title ══════════ -->
-    <div class="slide active" id="slide-1">
-        <!-- Replace with: <img src="..." class="slide__logo-top"> -->
-        <img src="/img/UC Logo.png" class="slide__logo-top" alt="logo">
+        <!-- ══════════ SLIDE 1: Title ══════════ -->
+        <div class="slide active" id="slide-1" data-hash="title-slide">
+            <!-- Replace with: <img src="..." class="slide__logo-top"> -->
+            <img src="/img/UC Logo.png" class="slide__logo-top" alt="logo">
 
-        <p class="title-slide__course">Shadow English Club</p>
+            <p class="title-slide__course">Shadow English Club</p>
 
-        <h1 class="title-slide__main">
-            ENG206<br>
-            Practical English Usage III<br>
-            Final Reviews
-        </h1>
+            <h1 class="title-slide__main">
+                ENG206<br>
+                Practical English Usage III<br>
+                <span class="accent-red">Final Reviews</span>
+            </h1>
 
-        <!-- Replace with: <img src="..." class="title-slide__logo-mid"> -->
-        <img src="/img/UC Logo.png" class="title-slide__logo-mid" alt="logo">
+            <!-- Replace with: <img src="..." class="title-slide__logo-mid"> -->
+            <img src="/img/UC Logo.png" class="title-slide__logo-mid" alt="logo">
 
-        <p class="title-slide__lecturer">Instructor: Ngorn Sihasin</p>
-    </div>
-
-    <!-- ══════════ SLIDE 2: Outline ══════════ -->
-    <div class="slide" id="slide-2">
-        <img src="/img/UC Logo.png" class="slide__logo-top" alt="logo">
-
-        <div class="slide__header">
-            <!-- Icon box — Font Awesome person icon like the reference -->
-            <div class="slide__header-icon">
-                <i class="fa-solid fa-address-book"></i>
-            </div>
-            <h2>Outline</h2>
+            <p class="title-slide__lecturer">Instructor: Ngorn Sihasin</p>
         </div>
 
-        <ul class="slide__bullets">
-            <li>Vocabulary</li>
-            <li>Reading Skills</li>
-            <li>Reading Comprehension</li>
-        </ul>
+        <!-- ══════════ SLIDE 2: Outline ══════════ -->
+        <div class="slide" id="slide-2" data-hash="outline">
+            <img src="/img/UC Logo.png" class="slide__logo-top" alt="logo">
+
+            <div class="slide__header">
+                <!-- Icon box — Font Awesome person icon like the reference -->
+                <div class="slide__header-icon">
+                    <i class="fa-solid fa-address-book"></i>
+                </div>
+                <h2>Outline</h2>
+            </div>
+
+            <ul class="slide__bullets">
+                <li>Vocabulary</li>
+                <li>Reading Skills</li>
+                <li>Reading Comprehension</li>
+            </ul>
+        </div>
+
     </div>
 
-</div>
+    <!-- Navigation arrows -->
+    <button class="nav-arrow prev" id="prevBtn" onclick="changeSlide(-1)" disabled>&#8249;</button>
+    <button class="nav-arrow next" id="nextBtn" onclick="changeSlide(1)">&#8250;</button>
 
-<!-- Navigation arrows -->
-<button class="nav-arrow prev" id="prevBtn" onclick="changeSlide(-1)" disabled>&#8249;</button>
-<button class="nav-arrow next" id="nextBtn" onclick="changeSlide(1)">&#8250;</button>
+    <!-- Page counter -->
+    <div class="page-counter" id="pageCounter">1 / 2</div>
 
-<!-- Page counter -->
-<div class="page-counter" id="pageCounter">1 / 2</div>
+    <!-- Script -->
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const total  = slides.length;
+        let current  = 0;
 
-<script>
-    const slides = document.querySelectorAll('.slide');
-    const total  = slides.length;
-    let current  = 0;
+        // Go to slide by index
+        function goTo(index) {
+            slides[current].classList.remove('active');
+            current = Math.max(0, Math.min(total - 1, index));
+            slides[current].classList.add('active');
+            document.getElementById('prevBtn').disabled = current === 0;
+            document.getElementById('nextBtn').disabled = current === total - 1;
+            document.getElementById('pageCounter').textContent = (current + 1) + ' / ' + total;
+            // Update URL hash
+            history.replaceState(null, '', '#/' + slides[current].dataset.hash);
+        }
 
-    function changeSlide(dir) {
-        slides[current].classList.remove('active');
-        current = Math.max(0, Math.min(total - 1, current + dir));
-        slides[current].classList.add('active');
-        document.getElementById('prevBtn').disabled = current === 0;
-        document.getElementById('nextBtn').disabled = current === total - 1;
-        document.getElementById('pageCounter').textContent = (current + 1) + ' / ' + total;
-    }
+        function changeSlide(dir) { goTo(current + dir); }
 
-    document.addEventListener('keydown', e => {
-        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') changeSlide(1);
-        if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   changeSlide(-1);
-    });
-</script>
+        // On load, check if URL has a hash and jump to that slide
+        const hash = location.hash.replace('#/', '');
+        if (hash) {
+            const target = [...slides].findIndex(s => s.dataset.hash === hash);
+            if (target !== -1) goTo(target);
+        }
 
-</body>
+        document.addEventListener('keydown', e => {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') changeSlide(1);
+            if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   changeSlide(-1);
+        });
+
+        // Browser back/forward support
+        window.addEventListener('hashchange', () => {
+            const h = location.hash.replace('#/', '');
+            const i = [...slides].findIndex(s => s.dataset.hash === h);
+            if (i !== -1) goTo(i);
+        });
+    </script>
+
+    </body>
 </html>
