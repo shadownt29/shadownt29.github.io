@@ -17,7 +17,7 @@ body {
 }
 .head_inner-wrap {
     max-width: 925px;
-    margin-left: 2px;
+    margin-left: 32px;
     margin-right: auto;
     clear: both;
     padding: 1.8em 1.5em;
@@ -88,7 +88,7 @@ body {
     white-space: nowrap;
     &:hover {
         color: #fff;
-        text-decoration: underline;
+        text-decoration: underline 3px;
     }
 }
 .hidden {
