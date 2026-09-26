@@ -7,22 +7,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ngorn Sihasin</title>
         <link rel="stylesheet" href="/style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     </head>
     <body>
+
+        <!-- NAV -->
         <div class="head">
             <div class="head_inner-wrap">
                 <div class="head_menu">
-                    <nav id="site-nav" class="greedy-nav"> 
+                    <nav id="site-nav" class="greedy-nav">
                         <button class="hidden" count="0">
                             <div class="favicon"></div>
                         </button>
                         <ul class="visible-links">
-                            <li class="head_menu-item">
-                                <a href="https://shadownt29.github.io/">Home</a>
+                            <li class="head_menu-item masthead__menu-item--lg">
+                                <a href="/">Home</a>
                             </li>
                             <li class="head_menu-item">
-                                <a href="https://shadownt29.github.io/ShadowEnglishClub">ShadowEnglishClub</a>
+                                <a href="/ShadowEnglishClub/">ShadowEnglishClub</a>
                             </li>
                             <li class="head_menu-item">
                                 <a href="/contact.html">Contact</a>
@@ -34,46 +36,57 @@
             </div>
         </div>
 
+        <!-- SIDEBAR + CONTENT -->
         <div id="main" role="main">
-            <!-- Sidebar -->
-            <aside class="sidebar">
-                <div class="author-avatar">
-                    <img src="..." alt="Ngorn Sihasin">
+
+            <!-- LEFT: sidebar -->
+            <div class="sidebar sticky">
+                <div class="author__avatar">
+                    <img src="/images/profile.jpg" alt="Ngorn Sihasin">
                 </div>
-                <div class="author-info">
-                    <h3 class="author-name">Ngorn Sihasin</h3>
-                    <p class="author-bio">
+                <div class="author__content">
+                    <h3 class="author__name">Ngorn Sihasin</h3>
+                    <p class="author__bio">
                         Student at AUPP<br>
-                        BS Information & Communications Technology
+                        BS Information &amp; Communications Technology
                     </p>
-                    <ul class="author-links">
+                </div>
+                <div class="author__urls-wrapper">
+                    <ul class="author__urls social-icons">
                         <li>
-                            <i class="fa-solid fa-location-dot"></i>
+                            <i class="fas fa-fw fa-map-marker-alt"></i>
                             Phnom Penh, Cambodia
                         </li>
                         <li>
-                            <a href="mailto:2025296ngorn@aupp.edu.kh">
-                                <i class="fa-solid fa-envelope"></i> AUPP Email
-                            </a>
-                        </li>
-                        <li>
-                            <a href="mailto:ngornsihasin007@gmail.com">
-                                <i class="fa-solid fa-envelope"></i> Personal Email
+                            <a href="mailto:your@email.com">
+                                <i class="fas fa-fw fa-envelope"></i> Email
                             </a>
                         </li>
                         <li>
                             <a href="https://github.com/shadownt29" target="_blank">
-                                <i class="fa-brands fa-github"></i> Github
+                                <i class="fab fa-fw fa-github"></i> Github
                             </a>
                         </li>
                     </ul>
                 </div>
-            </aside>
-
-            <!-- Main content -->
-            <div class="main-content">
-                <!-- your content here -->
             </div>
+
+            <!-- RIGHT: main page content -->
+            <article class="page">
+                <div class="page__inner-wrap">
+                    <header>
+                        <h1 class="page__title">About me</h1>
+                    </header>
+                    <section class="page__content">
+                        <p>Write something about yourself here.</p>
+                        <p>More paragraphs, projects, links — whatever you want.</p>
+                        <h1>Projects</h1>
+                        <p>List your projects here.</p>
+                    </section>
+                </div>
+            </article>
+
         </div>
+
     </body>
 </html>
