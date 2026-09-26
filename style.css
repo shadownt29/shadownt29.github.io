@@ -56,13 +56,16 @@ body {
 .greedy-nav .visible-links li {
     display: table-cell;
     vertical-align: middle;
+    padding: 0 8px;
 }
-.greedy-nav .visible-links a {
-    display: block;
-    padding: 0.5rem 1rem;
-    color: #fff;
+.greedy-nav .visible-links a,
+.greedy-nav .visible-links a:visited,
+.greedy-nav .visible-links a:link {
+    color: #fff !important;
     text-decoration: none;
     font-weight: bold;
+    padding: 0.5rem 0.5rem;
+    white-space: nowrap;
 }
 .hidden {
     display: none;
