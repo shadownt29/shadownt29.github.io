@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ngorn Sihasin</title>
         <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     </head>
     <body>
         <div class="head">
@@ -32,39 +33,47 @@
                 </div>
             </div>
         </div>
+
         <div id="main" role="main">
-            <div class="sidebar">
-                <div class="sidebar__inner">
-                    <img src="/images/profile.jpg" alt="Your Name" class="sidebar__avatar">
-                    <h3 class="sidebar__name">Shadow</h3>
-                    <p class="sidebar__bio">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="author-avatar">
+                    <img src="..." alt="Ngorn Sihasin">
+                </div>
+                <div class="author-info">
+                    <h3 class="author-name">Ngorn Sihasin</h3>
+                    <p class="author-bio">
                         Student at AUPP<br>
-                        ICT Program
+                        BS Information & Communications Technology
                     </p>
-                    <ul class="sidebar__links">
-                        <li><span class="icon">📍</span> Phnom Penh, Cambodia</li>
-                        <li><a href="mailto:you@email.com"><span class="icon">✉</span> Email</a></li>
-                        <li><a href="https://github.com/shadownt29"><span class="icon">🐙</span> Github</a></li>
+                    <ul class="author-links">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            Phnom Penh, Cambodia
+                        </li>
+                        <li>
+                            <a href="mailto:2025296ngorn@aupp.edu.kh">
+                                <i class="fa-solid fa-envelope"></i> AUPP Email
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:ngornsihasin007@gmail.com">
+                                <i class="fa-solid fa-envelope"></i> Personal Email
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/shadownt29" target="_blank">
+                                <i class="fa-brands fa-github"></i> Github
+                            </a>
+                        </li>
                     </ul>
                 </div>
-            </div>
-            <main>
-                <section class="about">
-                    <h1>About me</h1>
-                    <p>
-                        I am currently a <strong>Student</strong> at the American University of Phnom Penh (AUPP), 
-                        pursuing a degree in Information and Communications Technology.
-                    </p>
-                    <p>
-                        Write whatever else here...
-                    </p>
+            </aside>
 
-                    <h2>Interests</h2>
-                    <p>
-                        More text here...
-                    </p>
-                </section>
-            </main>
+            <!-- Main content -->
+            <div class="main-content">
+                <!-- your content here -->
+            </div>
         </div>
     </body>
 </html>
