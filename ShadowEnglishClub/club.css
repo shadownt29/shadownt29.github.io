@@ -226,3 +226,10 @@ span.club-meta__value { color: #333; }
     color: #1a73b8;
     border-left: 3px solid #1a73b8;
 }
+
+/* Resources */
+#resources a {
+    color: #1a73b8;
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+}
