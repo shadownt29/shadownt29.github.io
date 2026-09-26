@@ -1,5 +1,9 @@
 /* ===================== CLUB PAGE STYLES ===================== */
-
+/* White background for club page only */
+body {
+    background-color: #fff !important;
+    color: #222;
+}
 /* --- Hero banner --- */
 .club-hero {
     position: relative;
