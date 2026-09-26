@@ -17,11 +17,12 @@ body {
 }
 .head_inner-wrap {
     max-width: 925px;
-    margin-left: 32px;
+    margin-left: 225px;
     margin-right: auto;
     clear: both;
     padding: 1.8em 1.5em;
     font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+    font-size: larger;
 }
 .head_menu ul {
     margin: 0;
@@ -137,8 +138,8 @@ div {
 }
 
 .author-avatar img {
-    width: 100%;
-    height: 100%;
+    width: 130%;
+    height: 130%;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #4a6572;
@@ -147,7 +148,7 @@ div {
 .author-name {
     font-size: 1.1em;
     font-weight: bold;
-    margin: 0 0 0.4em 0;
+    margin: 3.5em 0 0.4em 0;
     color: #fff;
 }
 
