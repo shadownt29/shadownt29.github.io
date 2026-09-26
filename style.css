@@ -53,6 +53,17 @@ body {
     background: #1b2b33;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
+.greedy-nav .visible-links li {
+    display: table-cell;
+    vertical-align: middle;
+}
+.greedy-nav .visible-links a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
 .hidden {
     display: none;
     visibility: hidden;
@@ -70,10 +81,7 @@ nav li {
     clear: both;
     list-style-type: none;
 }
-.greedy-nav .visible-links li {
-    display: table-cell;
-    vertical-align: middle;
-}
+
 .head_menu-item {
     display: block;
     list-style-type: none;
