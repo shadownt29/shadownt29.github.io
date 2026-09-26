@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENG206</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, "Segoe UI", "Roboto", Arial, sans-serif;
+            background: #fff;
+            color: #1e3a5f;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* ── Slide container ── */
+        .slideshow {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Each slide hidden by default */
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            padding: 3em 5em;
+        }
+
+        .slide.active { display: flex; flex-direction: column; }
+
+        /* ── Top-right logo (every slide) ── */
+        .slide__logo-top {
+            position: absolute;
+            top: 1em;
+            right: 1.5em;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #dde6f0;       /* placeholder — swap with <img> */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6em;
+            color: #888;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        /* ── SLIDE 1: Title slide ── */
+        #slide-1 {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 0.6em;
+        }
+
+        .title-slide__course {
+            font-size: 1.3em;
+            color: #2e5fa3;
+            margin-bottom: 0.2em;
+        }
+
+        .title-slide__main {
+            font-size: 3em;
+            font-weight: bold;
+            color: #1e3a5f;
+            line-height: 1.15;
+        }
+
+        /* Colored accent words — add class to <span> inside heading */
+        .accent-green { color: #3ab54a; }
+        .accent-blue  { color: #2e5fa3; }
+
+        /* Middle logo placeholder */
+        .title-slide__logo-mid {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: #dde6f0;       /* swap with <img src="..."> */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7em;
+            color: #888;
+            text-align: center;
+            margin: 0.6em auto;
+        }
+
+        .title-slide__lecturer {
+            font-size: 1.3em;
+            color: #2e5fa3;
+            margin-top: 0.4em;
+        }
+
+        /* ── SLIDE 2: Outline / content slide ── */
+        #slide-2 { justify-content: flex-start; padding-top: 2.5em; }
+
+        .slide__header {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            margin-bottom: 1.2em;
+        }
+
+        /* Icon box before heading */
+        .slide__header-icon {
+            width: 52px;
+            height: 52px;
+            background: #2e5fa3;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.4em;
+        }
+
+        .slide__header h2 {
+            font-size: 2em;
+            font-weight: bold;
+            color: #1e3a5f;
+        }
+
+        .slide__bullets {
+            list-style: none;
+            padding-left: 1em;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+        }
+
+        .slide__bullets li {
+            font-size: 1.35em;
+            color: #1e3a5f;
+            display: flex;
+            align-items: center;
+            gap: 0.6em;
+        }
+
+        .slide__bullets li::before {
+            content: "•";
+            font-size: 1.4em;
+            color: #1e3a5f;
+        }
+
+        /* ── Nav arrows ── */
+        .nav-arrow {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2em;
+            color: #2e5fa3;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.3em;
+            opacity: 0.5;
+            transition: opacity 0.2s;
+            z-index: 100;
+        }
+
+        .nav-arrow:hover { opacity: 1; }
+        .nav-arrow.prev { left: 0.5em; }
+        .nav-arrow.next { right: 0.5em; }
+        .nav-arrow:disabled { opacity: 0.15; cursor: default; }
+
+        /* ── Page counter bottom-right ── */
+        .page-counter {
+            position: fixed;
+            bottom: 0.8em;
+            right: 1.2em;
+            font-size: 0.85em;
+            color: #888;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slideshow">
+
+    <!-- ══════════ SLIDE 1: Title ══════════ -->
+    <div class="slide active" id="slide-1">
+
+        <!-- Top-right logo: replace div with <img src="your-logo.png"> -->
+        <img src="/img/UC Logo.png">
+
+        <p class="title-slide__course">Shadow English Club</p>
+
+        <h1 class="title-slide__main">
+            ENG206<br>
+            <span class="accent-green">English</span> &amp; <span class="accent-blue">Grammar</span>
+        </h1>
+
+        <!-- Middle logo: replace div with <img src="your-logo.png" style="width:110px;border-radius:50%;"> -->
+        <img src="/img/UC Logo.png" style="width:100%;border-radius:50%;">
+
+        <p class="title-slide__lecturer">Instructor: Ngorn Sihasin</p>
+    </div>
+
+    <!-- ══════════ SLIDE 2: Outline ══════════ -->
+    <div class="slide" id="slide-2">
+
+        <!-- Top-right logo -->
+        <div class="slide__logo-top">Logo</div>
+
+        <div class="slide__header">
+            <!-- Icon box — Font Awesome person icon like the reference -->
+            <div class="slide__header-icon">
+                <i class="fa-solid fa-person-chalkboard"></i>
+            </div>
+            <h2>Outline</h2>
+        </div>
+
+        <ul class="slide__bullets">
+            <li>[ Topic 1 ]</li>
+            <li>[ Topic 2 ]</li>
+            <li>[ Topic 3 ]</li>
+            <li>[ Topic 4 ]</li>
+            <li>[ Topic 5 ]</li>
+        </ul>
+
+    </div>
+
+</div>
+
+<!-- ── Navigation ── -->
+<button class="nav-arrow prev" id="prevBtn" onclick="changeSlide(-1)" disabled>&#8249;</button>
+<button class="nav-arrow next" id="nextBtn" onclick="changeSlide(1)">&#8250;</button>
+
+<!-- Page counter -->
+<div class="page-counter" id="pageCounter">1 / 2</div>
+
+<script>
+    const slides = document.querySelectorAll('.slide');
+    const total  = slides.length;
+    let current  = 0;
+
+    function changeSlide(dir) {
+        slides[current].classList.remove('active');
+        current = Math.max(0, Math.min(total - 1, current + dir));
+        slides[current].classList.add('active');
+
+        document.getElementById('prevBtn').disabled = current === 0;
+        document.getElementById('nextBtn').disabled = current === total - 1;
+        document.getElementById('pageCounter').textContent = (current + 1) + ' / ' + total;
+    }
+
+    // Keyboard arrow support
+    document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') changeSlide(1);
+        if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   changeSlide(-1);
+    });
+</script>
+
+</body>
+</html>
