@@ -16,10 +16,10 @@ body {
 }
 .head_inner-wrap {
     max-width: 925px;
-    margin-left: auto;
+    margin-left: 2px;
     margin-right: auto;
     clear: both;
-    padding: 1em 1em 1em;
+    padding: 1.8em 1.5em;
     font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
 }
 /* nav */
@@ -58,12 +58,19 @@ body {
     vertical-align: middle;
     padding: 0 8px;
 }
+.greedy-nav .visible-links li:first-child {
+    padding-right: 2rem;
+}
+
+.greedy-nav .visible-links li:first-child a {
+    font-weight: bold;
+}
 .greedy-nav .visible-links a,
 .greedy-nav .visible-links a:visited,
 .greedy-nav .visible-links a:link {
     color: #fff !important;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: normal;
     padding: 0.5rem 0.5rem;
     white-space: nowrap;
 }
