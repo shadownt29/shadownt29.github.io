@@ -1,32 +1,28 @@
 /* ===================== SLIDES STYLESHEET ===================== */
-:root {
-    --canva-bg: #ffffff;
-    --canva-banner: #1e3a5f; /* Dark Blue top banner */
-    --canva-badge: #2e5fa3;  /* Lighter Blue for floating badges & accents */
-    --canva-accent: #e63946; /* Red accents */
-    --canva-text-main: #1e3a5f;
-    --canva-text-light: #ffffff;
-}
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
     font-family: -apple-system, "Segoe UI", "Roboto", Arial, sans-serif;
-    background: var(--canva-bg);
-    color: var(--canva-text-main);
+    background: #fff;
+    color: #1e3a5f;
     height: 100vh;
     overflow: hidden;
 }
 
 /* ── Slide container ── */
-.slideshow { width: 100%; height: 100vh; position: relative; }
+.slideshow {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
 
 .slide {
     display: none;
     width: 100%;
     height: 100vh;
     position: relative;
-    padding: 4em 7em 3em 8em;
+    padding: 3em 7em 3em 12em;
 }
 
 .slide.active { display: flex; flex-direction: column; }
@@ -34,15 +30,12 @@ body {
 /* ── Top-right logo ── */
 .slide__logo-top {
     position: absolute;
-    top: 2.5vh;
-    right: 3vw;
-    width: 80px;
-    height: 80px;
+    top: 1em;
+    right: 1.5em;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
-    object-fit: cover;
-    z-index: 10;
-    background: white; 
-    padding: 5px;
+    object-fit: cover;   /* works when it's an <img> */
 }
 
 /* ── SLIDE 1: Title ── */
@@ -53,265 +46,286 @@ body {
     gap: 0.6em;
 }
 
-/* Canva 3 Decorative bars at the top for Title Slide & Section Slides */
-#slide-1::before, .slide--section::before {
-    content: "";
-    position: absolute;
-    top: 10vh;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 70%;
-    height: 25px;
-    background: linear-gradient(to right,
-        var(--canva-badge) 0%, var(--canva-badge) 26%,
-        transparent 26%, transparent 37%,
-        var(--canva-badge) 37%, var(--canva-badge) 63%,
-        transparent 63%, transparent 74%,
-        var(--canva-badge) 74%, var(--canva-badge) 100%
-    );
-    border-radius: 12px;
-}
-
 .title-slide__course {
-    font-size: 2em;
-    color: var(--canva-badge);
+    font-size: 1.6em;
+    color: #2e5fa3;
     margin-bottom: 0.2em;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
 }
-.accent-red { color: var(--canva-accent); }
+.accent-red {color: red;}
 
 .title-slide__main {
-    font-size: 5.5em;
-    font-weight: 900;
-    color: var(--canva-text-main);
-    line-height: 1.1;
+    font-size: 4.8em;
+    font-weight: bold;
+    color: #1e3a5f;
+    line-height: 1.15;
 }
 
+/* Middle logo */
 .title-slide__logo-mid {
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
-    object-fit: cover;
-    margin: 1em auto;
+    object-fit: cover;   /* works when it's an <img> */
+    margin: 0.6em auto;
     display: block;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
 
 .title-slide__lecturer {
-    font-size: 1.8em;
-    color: var(--canva-badge);
-    font-weight: 500;
+    font-size: 1.6em;
+    color: #2e5fa3;
+    margin-top: 0.4em;
 }
 
-/* ── CONTENT SLIDES (Canva Banners & Badges) ── */
-/* Inject Canva's Top Banner background to all content slides */
-.slide:not(#slide-1):not(.slide--section)::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 18vh;
-    background: var(--canva-banner);
-    z-index: 1;
+/* ── SLIDE 2+: Content slides ── */
+#slide-2 { 
+    justify-content: flex-start; 
+    padding-top: 5em; 
 }
 
-/* Push text content down to avoid the banner */
-.slide:not(#slide-1):not(.slide--section) {
-    padding-top: 24vh;
-}
-
-/* Turn the old headers into Canva Title Badges */
 .slide__header {
-    position: absolute;
-    top: 8vh;
-    left: 6vw;
-    background: var(--canva-badge);
-    padding: 0.7em 2em;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    z-index: 2;
     display: flex;
     align-items: center;
+    gap: 0.5em;
+    margin-bottom: 1.4em;
 }
 
-/* Hide the icons to match Canva's text-only style */
-.slide__header-icon { display: none; }
-
-.slide__header h2 {
-    font-size: 3.5em;
-    font-weight: 800;
-    color: var(--canva-text-light);
-    margin: 0;
-}
-
-/* ── Subtitles ── */
-.slide__subtitle {
-    font-size: 2.2em;
-    font-weight: bold;
-    color: var(--canva-text-main);
-    margin-bottom: 1em;
-    padding-left: 0.5em;
-    border-left: 5px solid var(--canva-accent);
-}
-
-.slide__topic {
-    font-size: 2.6em;
-    font-weight: 800;
-    color: var(--canva-text-main);
-    margin-bottom: 0.8em;
-}
-
-/* ── Section Divider Slide ── */
-.slide--section {
+.slide__header-icon {
+    width: 70px;
+    height: 70px;
+    background: #2e5fa3;
+    border-radius: 6px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    color: #fff;
+    font-size: 1.7em;
 }
 
-.slide--section h2 {
-    font-size: 7em;
-    font-weight: 900;
-    color: var(--canva-text-main);
-    margin-top: 1em; 
+.slide__header h2 {
+    font-size: 5em;
+    font-weight: bold;
+    color: #2e5fa3;
 }
 
-/* ── Typography & Bullets ── */
 .slide__bullets {
     list-style: none;
     padding-left: 1em;
     display: flex;
     flex-direction: column;
-    gap: 1.2em;
+    gap: 1.1em;
 }
 
 .slide__bullets li {
-    font-size: 2.8em;
+    font-size: 3em;
     font-weight: 500;
-    color: var(--canva-text-main);
+    color: #2e5fa3;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.6em;
 }
 
 .slide__bullets li::before {
     content: "•";
-    font-size: 1.2em;
-    color: var(--canva-badge);
-    line-height: 1.1;
+    font-size: 1.3em;
+    color: #1e3a5f;
 }
 
-.slide__bullets--dense li {
-    font-size: 2.3em;
-    gap: 0.5em;
-}
-
-.slide__bullets .sub-bullets {
-    list-style: none;
-    padding-left: 1.5em;
-    margin-top: 0.4em;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
-}
-
-.slide__bullets .sub-bullets li {
-    font-size: 0.9em;
-    color: var(--canva-badge);
-}
-
-.slide__bullets .sub-bullets li::before {
-    content: "–";
-    font-size: 1.1em;
-    color: var(--canva-accent);
-}
-
-/* ── Table Styling (Canva Grid) ── */
-.slide__table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 0.5em;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-.slide__table th {
-    background: var(--canva-banner);
-    color: var(--canva-text-light);
-    font-size: 1.8em;
-    padding: 0.8em 1em;
-    text-align: left;
-    font-weight: bold;
-}
-
-.slide__table td {
-    font-size: 1.6em;
-    padding: 0.8em 1.1em;
-    border-bottom: 2px solid #e0e6ed;
-    color: var(--canva-text-main);
-    background: var(--canva-bg);
-}
-
-.slide__table tr:nth-child(even) td {
-    background: #f4f7fb;
-}
-
-.slide__table td:first-child {
-    font-weight: bold;
-    color: var(--canva-badge);
-    width: 25%;
-}
-
-.slide__table td:nth-child(2) { width: 45%; }
-.slide__table td:nth-child(3) { width: 30%; }
-
-/* ── Highlight Box ── */
-.slide__box {
-    background: #f0f4f9;
-    border-left: 8px solid var(--canva-accent);
-    padding: 1.2em 1.5em;
-    border-radius: 4px;
-    margin-top: 1.5em;
-    font-size: 2em;
-    color: var(--canva-text-main);
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-/* ── Controls ── */
+/* ── Nav arrows ── */
 .nav-arrow {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 5em;
-    color: var(--canva-badge);
-    background: rgba(255,255,255,0.8);
+    font-size: 4em;          /* bigger */
+    color: #2e5fa3;
+    background: none;
     border: none;
     cursor: pointer;
-    padding: 0.1em 0.3em;
-    border-radius: 12px;
-    opacity: 0.3;
-    transition: all 0.2s;
+    padding: 0.2em 0.3em;
+    opacity: 0.4;
+    transition: opacity 0.2s;
     z-index: 100;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    line-height: 1;
 }
 
-.nav-arrow:hover { opacity: 1; transform: translateY(-50%) scale(1.1); }
-.nav-arrow.prev { left: 0.5vw; }
-.nav-arrow.next { right: 0.5vw; }
-.nav-arrow:disabled { display: none; }
+.nav-arrow:hover { opacity: 1; }
+.nav-arrow.prev { left: 0.1em; }
+.nav-arrow.next { right: 0.1em; }
+.nav-arrow:disabled { opacity: 0.1; cursor: default; }
 
+/* ── Page counter ── */
 .page-counter {
     position: fixed;
-    bottom: 1.5em;
-    right: 2em;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: var(--canva-badge);
-    background: rgba(255,255,255,0.9);
-    padding: 0.5em 1em;
-    border-radius: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    bottom: 0.8em;
+    right: 1.2em;
+    font-size: 1em;
+    color: #888;
     z-index: 100;
+}
+
+/* ============================================================ */
+/* NEW CANVA SLIDES STYLESHEET (Prevents layout breaking)       */
+/* ============================================================ */
+
+.canva-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.canva-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    margin-bottom: 0.8em;
+}
+
+.canva-header-icon {
+    width: 55px;
+    height: 55px;
+    background: #2e5fa3;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.4em;
+}
+
+.canva-header h2 {
+    font-size: 2.8em;
+    font-weight: bold;
+    color: #2e5fa3;
+}
+
+.canva-subtitle {
+    font-size: 1.8em;
+    color: #1e3a5f;
+    margin-bottom: 0.8em;
+    font-weight: bold;
+}
+
+.canva-topic {
+    font-size: 2em;
+    font-weight: bold;
+    color: #1e3a5f;
+    margin-bottom: 0.4em;
+}
+
+.canva-section-title {
+    font-size: 4.5em;
+    font-weight: bold;
+    color: #1e3a5f;
+    text-align: center;
+    margin-top: 1.5em;
+}
+
+/* Scaled Table for Canva Slides */
+.canva-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.canva-table th {
+    background: #2e5fa3;
+    color: #fff;
+    font-size: 1.3em;
+    padding: 0.7em 0.8em;
+    text-align: left;
+}
+
+.canva-table td {
+    font-size: 1.1em;
+    padding: 0.7em 0.8em;
+    border-bottom: 1px solid #e0e6ed;
+    color: #1e3a5f;
+}
+
+.canva-table tr:nth-child(even) td {
+    background: #f8fafc;
+}
+
+.canva-table td:first-child {
+    font-weight: bold;
+    color: #2e5fa3;
+    width: 20%;
+}
+
+.canva-table td:nth-child(2) {
+    width: 45%;
+}
+
+.canva-table td:nth-child(3) {
+    width: 35%;
+}
+
+/* Scaled Bullets for Canva Slides */
+.canva-bullets {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+}
+
+.canva-bullets li {
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #1e3a5f;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+}
+
+/* Bullet icon fix */
+.canva-bullets > li::before {
+    content: "•";
+    position: absolute;
+    left: -1em;
+    font-size: 1.2em;
+    color: #2e5fa3;
+    margin-top: -0.1em;
+}
+
+.canva-bullets > li {
+    position: relative;
+    margin-left: 1.2em;
+}
+
+/* Sub-bullets */
+.canva-bullets .sub-bullets {
+    list-style: none;
+    padding-left: 0.5em;
+    margin-top: 0.3em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+}
+
+.canva-bullets .sub-bullets li {
+    font-size: 0.9em;
+    color: #2e5fa3;
+    margin-left: 1em;
+    position: relative;
+}
+
+.canva-bullets .sub-bullets li::before {
+    content: "–";
+    position: absolute;
+    left: -1em;
+    color: #2e5fa3;
+}
+
+.canva-box {
+    background: #f0f4f9;
+    border-left: 5px solid #2e5fa3;
+    padding: 0.8em 1.2em;
+    border-radius: 4px;
+    margin-top: 1em;
+    font-size: 1.3em;
+    color: #1e3a5f;
+    font-weight: bold;
 }
