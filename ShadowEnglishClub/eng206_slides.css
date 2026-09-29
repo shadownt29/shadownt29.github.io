@@ -141,7 +141,8 @@ body {
 /* ── SLIDE 2: Outlines ── */
 #slide-2 { 
     justify-content: flex-start; 
-    padding-top: 5em; 
+    position: relative;
+    padding: 3em 7em 3em 12em;
 }
 
 .slide__header {
