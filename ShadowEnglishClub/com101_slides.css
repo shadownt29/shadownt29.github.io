@@ -1,0 +1,450 @@
+/* ============================================================
+   COM Final Review — Slide Stylesheet
+   All values use CSS variables — change once, updates everywhere
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+/* ── DESIGN TOKENS (variables) ── */
+:root {
+    /* Colors */
+    --c-header-bg:    #aecfc8;   /* sage green header band */
+    --c-badge-bg:     #5ec8d4;   /* cyan badge/pill */
+    --c-badge-text:   #0c3d32;   /* dark text on badge */
+    --c-heading:      #1a5f4f;   /* main heading teal */
+    --c-accent:       #e84030;   /* red accent (subtitle highlight) */
+    --c-subheading:   #1a5f4f;   /* subheading teal */
+    --c-body:         #111111;   /* body text */
+    --c-bg:           #ffffff;   /* slide background */
+    --c-section-bg:   #aecfc8;   /* section title slide bg */
+    --c-table-border: #d8e8e5;   /* table border */
+    --c-table-head:   #e8f4f2;   /* table header row bg */
+    --c-dot:          #c8ddd9;   /* decorative dots */
+    --c-dot-active:   #5ec8d4;   /* active dot */
+
+    /* Typography */
+    --font:           'Nunito', -apple-system, 'Segoe UI', sans-serif;
+
+    /* Font sizes */
+    --fs-section:     6.2rem;    /* big section title */
+    --fs-badge:       0.82rem;   /* badge label */
+    --fs-title:       2.9rem;    /* slide main heading */
+    --fs-subtitle:    2.05rem;   /* subtitle under heading */
+    --fs-body:        1.95rem;   /* body / bullet text */
+    --fs-table-head:  1.5rem;   /* table column headers */
+    --fs-table-body:  1.3rem;    /* table row content */
+
+    /* Font weights */
+    --fw-badge:       800;
+    --fw-heading:     800;
+    --fw-subheading:  700;
+    --fw-body:        600;
+    --fw-table-head:  700;
+    --fw-table-body:  600;
+
+    /* Layout */
+    --header-h:       100px;     /* top header band height */
+    --content-px:     3rem;      /* horizontal padding on content */
+    --content-pt:     1.4rem;    /* top padding on content */
+    --badge-radius:   10px;      /* pill rounding */
+    --badge-px:       1.1rem;    /* badge horizontal padding */
+    --badge-py:       0.35rem;   /* badge vertical padding */
+
+    /* Spacing */
+    --gap-section:    0.9rem;    /* gap between title and subtitle */
+    --gap-bullet:     0.7rem;    /* gap between bullet items */
+    --table-cell-py:  0.55rem;   /* table cell vertical padding */
+    --table-cell-px:  0.8rem;    /* table cell horizontal padding */
+}
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+
+
+body {
+    font-family: var(--font);
+    background: var(--c-bg);
+    color: var(--c-body);
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+/* ── SLIDESHOW WRAPPER ── */
+.slideshow {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+/* ── SLIDE BASE ── */
+.slide {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.slide.active { display: flex; flex-direction: column;}
+
+/* ── Top-right logo ── */
+.slide__logo-top {
+    position: absolute;
+    top: 1em;
+    right: 1.5em;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;   /* works when it's an <img> */
+}
+
+/* ── SLIDE 1: Title ── */
+#slide-1 {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.6em;
+}
+
+.title-slide__course {
+    font-size: 1.6em;
+    color: #2e5fa3;
+    margin-bottom: 0.2em;
+}
+.accent-red {color: red;}
+
+.title-slide__main {
+    font-size: 4.8em;
+    font-weight: bold;
+    color: #1e3a5f;
+    line-height: 1.15;
+}
+
+/* Middle logo */
+.title-slide__logo-mid {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;   /* works when it's an <img> */
+    margin: 0.6em auto;
+    display: block;
+}
+
+.title-slide__lecturer {
+    font-size: 1.6em;
+    color: #2e5fa3;
+    margin-top: 0.4em;
+}
+
+/* ── SLIDE 2: Outlines ── */
+#slide-2 { 
+    justify-content: flex-start; 
+    position: relative;
+    padding: 3em 7em 3em 12em;
+}
+
+.slide__header {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-bottom: 1.4em;
+}
+
+.slide__header-icon {
+    width: 70px;
+    height: 70px;
+    background: #2e5fa3;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.7em;
+}
+
+.slide__header h2 {
+    font-size: 5em;
+    font-weight: bold;
+    color: #2e5fa3;
+}
+
+.slide__bullets {
+    list-style: none;
+    padding-left: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1em;
+}
+
+.slide__bullets li {
+    font-size: 3em;
+    font-weight: 500;
+    color: #2e5fa3;
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+}
+
+.slide__bullets li::before {
+    content: "•";
+    font-size: 1.3em;
+    color: #1e3a5f;
+}
+
+
+/* ============================================================
+   SECTION TITLE SLIDE (type: section)
+   Full slide, centered, mint bg
+   ============================================================ */
+.slide--section {
+    background: var(--c-section-bg);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.section-title {
+    font-size: var(--fs-section);
+    font-weight: var(--fw-heading);
+    color: var(--c-badge-text);
+    letter-spacing: 0.02em;
+}
+
+/* ============================================================
+   CONTENT SLIDE HEADER BAND
+   ============================================================ */
+.slide-header {
+    background: var(--c-header-bg);
+    height: var(--header-h);
+    min-height: var(--header-h);
+    display: flex;
+    align-items: center;
+    padding: 0 var(--content-px);
+    flex-shrink: 0;
+}
+
+.slide-badge {
+    background: var(--c-badge-bg);
+    color: var(--c-badge-text);
+    font-size: var(--fs-badge);
+    font-weight: var(--fw-badge);
+    font-family: var(--font);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: var(--badge-py) var(--badge-px);
+    border-radius: var(--badge-radius);
+    white-space: nowrap;
+}
+
+/* ============================================================
+   CONTENT AREA (below header)
+   ============================================================ */
+.slide-content {
+    flex: 1;
+    padding: var(--content-pt) var(--content-px) 1.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Decorative dots — top right of content area */
+.slide-dots {
+    position: absolute;
+    top: var(--content-pt);
+    right: var(--content-px);
+    display: flex;
+    gap: 5px;
+}
+
+.slide-dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--c-dot);
+    display: block;
+}
+
+.slide-dots span.active { background: var(--c-dot-active); }
+
+/* ── Heading row ── */
+.slide-title {
+    font-size: var(--fs-title);
+    font-weight: var(--fw-heading);
+    color: var(--c-heading);
+    line-height: 1.2;
+    margin-bottom: 0.3rem;
+    padding-right: 120px; /* clear the dots */
+}
+
+.slide-title .accent { color: var(--c-accent); }
+
+.slide-subtitle {
+    font-size: var(--fs-subtitle);
+    font-weight: var(--fw-subheading);
+    color: var(--c-subheading);
+    margin-bottom: 1rem;
+}
+
+/* ============================================================
+   VOCABULARY TABLE
+   ============================================================ */
+.vocab-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font);
+    font-size: var(--fs-table-body);
+    flex: 1;
+}
+
+.vocab-table thead tr {
+    background: var(--c-table-head);
+    border-bottom: 2px solid var(--c-table-border);
+}
+
+.vocab-table th {
+    text-align: left;
+    padding: var(--table-cell-py) var(--table-cell-px);
+    font-size: var(--fs-table-head);
+    font-weight: var(--fw-table-head);
+    color: var(--c-heading);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.vocab-table tbody tr {
+    border-bottom: 1px solid var(--c-table-border);
+}
+
+.vocab-table tbody tr:last-child { border-bottom: none; }
+
+.vocab-table td {
+    padding: var(--table-cell-py) var(--table-cell-px);
+    font-weight: var(--fw-table-body);
+    color: var(--c-body);
+    vertical-align: top;
+    line-height: 1.4;
+}
+
+/* Word column — bold */
+.vocab-table td:first-child {
+    font-weight: 800;
+    color: var(--c-heading);
+    white-space: nowrap;
+    width: 15%;
+}
+
+/* Definition column */
+.vocab-table td:nth-child(2) { width: 50%; }
+
+/* Synonym column */
+.vocab-table td:nth-child(3) {
+    color: #555;
+    width: 35%;
+}
+
+/* ============================================================
+   BULLET LIST (reading skills)
+   ============================================================ */
+.slide-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-bullet);
+    flex: 1;
+}
+
+.slide-bullets li {
+    font-size: var(--fs-body);
+    font-weight: var(--fw-body);
+    color: var(--c-body);
+    line-height: 1.45;
+    padding-left: 1.2em;
+    position: relative;
+}
+
+.slide-bullets li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--c-heading);
+    font-size: 1.1em;
+}
+
+/* Numbered list variant */
+.slide-bullets.numbered { counter-reset: item; }
+
+.slide-bullets.numbered li::before {
+    content: counter(item) ".";
+    counter-increment: item;
+    font-weight: 800;
+    color: var(--c-heading);
+}
+
+/* Skill label (e.g. "Skimming:") */
+.skill-label {
+    font-weight: 800;
+    color: var(--c-heading);
+}
+
+/* Italic hint text */
+.hint {
+    font-style: italic;
+    color: #555;
+}
+
+/* ============================================================
+   NAV ARROWS
+   ============================================================ */
+.nav-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 4rem;
+    color: var(--c-heading);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.2em 0.3em;
+    opacity: 0.3;
+    transition: opacity 0.2s;
+    z-index: 100;
+    line-height: 1;
+    font-family: var(--font);
+}
+
+.nav-arrow:hover { opacity: 0.9; }
+.nav-arrow.prev { left: 0.2em; }
+.nav-arrow.next { right: 0.2em; }
+.nav-arrow:disabled { opacity: 0.1; cursor: default; }
+
+/* ============================================================
+   PAGE COUNTER
+   ============================================================ */
+.page-counter {
+    position: fixed;
+    bottom: 0.8em;
+    right: 1.2em;
+    font-size: 0.82rem;
+    font-family: var(--font);
+    font-weight: 700;
+    color: #999;
+    z-index: 100;
+}
+
+/* ============================================================
+   RESPONSIVE — shrink on smaller screens
+   ============================================================ */
+@media (max-width: 768px) {
+    :root {
+        --fs-section:  2rem;
+        --fs-title:    1.3rem;
+        --fs-body:     0.82rem;
+        --fs-table-body: 0.72rem;
+        --fs-table-head: 0.72rem;
+        --content-px:  1.5rem;
+        --header-h:    80px;
+    }
+}
