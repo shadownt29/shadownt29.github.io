@@ -26,13 +26,13 @@
     --font:           'Nunito', -apple-system, 'Segoe UI', sans-serif;
 
     /* Font sizes */
-    --fs-section:     3.2rem;    /* big section title */
+    --fs-section:     6.2rem;    /* big section title */
     --fs-badge:       0.82rem;   /* badge label */
-    --fs-title:       1.9rem;    /* slide main heading */
-    --fs-subtitle:    1.05rem;   /* subtitle under heading */
-    --fs-body:        0.95rem;   /* body / bullet text */
-    --fs-table-head:  0.82rem;   /* table column headers */
-    --fs-table-body:  0.8rem;    /* table row content */
+    --fs-title:       2.9rem;    /* slide main heading */
+    --fs-subtitle:    2.05rem;   /* subtitle under heading */
+    --fs-body:        1.95rem;   /* body / bullet text */
+    --fs-table-head:  1.5rem;   /* table column headers */
+    --fs-table-body:  1.3rem;    /* table row content */
 
     /* Font weights */
     --fw-badge:       800;
