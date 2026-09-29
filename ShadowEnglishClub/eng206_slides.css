@@ -87,7 +87,7 @@ body {
     overflow: hidden;
 }
 
-.slide.active { display: flex; }
+.slide.active { display: flex; flex-direction: column;}
 
 /* ── Top-right logo ── */
 .slide__logo-top {
