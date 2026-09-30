@@ -1,11 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Other Projects</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    </head>
+    <body>
+        <!-- ===================== HEAD / NAV ===================== -->
+        <!-- Top navigation bar — shared across all pages via style.css -->
+        <div class="head">
+            <div class="head_inner-wrap">
+                <div class="head_menu">
+                    <nav id="site-nav" class="greedy-nav"> 
+                        <button class="hidden" count="0">
+                            <div class="favicon"></div>
+                        </button>
+                        <ul class="visible-links">
+                            <!-- First item: bold + extra padding (see style.css li:first-child) -->
+                            <li class="head_menu-item">
+                                <a href="https://shadownt29.github.io/">Home</a>
+                            </li>
+                            <li class="head_menu-item">
+                                <a href="https://shadownt29.github.io/ShadowEnglishClub">ShadowEnglishClub</a>
+                            </li>
+                            <li class="head_menu-item">
+                                <a href="/others.html">Other Projects</a>
+                            </li>
+                        </ul>
+                        <ul class="hidden-links hidden"></ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- ===================== MAIN LAYOUT ==================== -->
+        <!-- Flexbox row: sidebar on left, content on right -->
+        <div id="main" role="main">
+
+            <!-- --------- SIDEBAR --------- -->
+            <!-- Left column: profile photo, name, bio, links -->
+            <aside class="sidebar">
+                <!-- Profile photo — circular, styled in style.css -->
+                <div class="author-avatar">
+                    <img src="/img/cat-window.webp" alt="Ngorn Sihasin">
+                </div>
+                <!-- Name, bio, and social links -->
+                <div class="author-info">
+                    <h3 class="author-name">Ngorn Sihasin</h3>
+                    <p class="author-bio">
+                        Student at AUPP<br>
+                        BS Information & Communications Technology
+                    </p>
+                    <ul class="author-links">
+                        <!-- Location (not a link, just text with icon) -->
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            Phnom Penh, Cambodia
+                        </li>
+                        <!-- Email links -->
+                        <li>
+                            <a href="mailto:2025296ngorn@aupp.edu.kh">
+                                <i class="fa-solid fa-envelope"></i> AUPP Email
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:ngornsihasin007@gmail.com">
+                                <i class="fa-solid fa-envelope"></i> Personal Email
+                            </a>
+                        </li>
+                        <!-- GitHub -->
+                        <li>
+                            <a href="https://github.com/shadownt29" target="_blank">
+                                <i class="fa-brands fa-github"></i> Github
+                            </a>
+                        </li>
+                        <!-- TG -->
+                        <li>
+                            <a href="https://t.me/sihasinf" target="_blank">
+                                <i class="fa-brands fa-telegram"></i> Telegram
+                            </a>
+                        </li>
+                        <!-- Insta -->
+                        <li>
+                            <a href="https://github.com/shadownt29" target="_blank">
+                                <i class="fa-brands fa-instagram"></i> Instagram
+                            </a>
+                        </li>
+                        <!-- FB -->
+                        <li>
+                            <a href="https://github.com/shadownt29" target="_blank">
+                                <i class="fa-brands fa-facebook"></i> Facebook
+                            </a>
+                        </li>
+                        <!-- TikTok -->
+                        <li>
+                            <a href="https://github.com/shadownt29" target="_blank">
+                                <i class="fa-brands fa-tiktok"></i> TikTok
+                            </a>
+                        </li>
+                        <!-- YT -->
+                        <li>
+                            <a href="https://github.com/shadownt29" target="_blank">
+                                <i class="fa-brands fa-youtube"></i> YouTube
+                            </a>
+                        </li>
+                        <!-- Discord -->
+                        <li>
+                            <a href="https://github.com/shadownt29" target="_blank">
+                                <i class="fa-brands fa-discord"></i> Discord
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- --------- MAIN CONTENT --------- -->
+            <!-- Right column: page article -->
+            <div class="main-content">
+                <!-- Article wrapper — mirrors the reference site's .page structure -->
+                <article class="page">
+                    <div class="page__inner-wrap">
+                        <!-- Page title -->
+                        <header>
+                            <h1 class="page__title">Other Projects</h1>
+                        </header>
+                        <!-- Body text -->
+                        <section class="page__content">
+                            <p>
+                                ...
+                            </p>
+                            <ul class="projects">
+                                <li>
+                                    <a href="https://github.com/shadownt29/Web-Development-I-Projects/blob/main/TechGates/index.html" target="_blank">TechGates Project</a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/shadownt29/Data-Structure" target="_blank">Data Structure</a>
+                                </li>
+                            </ul>
+                        </section>
+
+
+                        <!-- Footer placeholder — add tags, date, etc. later if needed -->
+                        <footer class="page__meta"></footer>
+                    </div>
+                </article>
+            </div> <!-- end of main content -->
+    </body>
 </html>
