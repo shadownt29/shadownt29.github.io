@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #1a2b33;
+    /* background-color: #1a2b33; */
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/bg.jpg');
     background-position: center;
     background-size: cover;
